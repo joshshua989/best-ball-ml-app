@@ -1,13 +1,10 @@
----
 
 # 🏈 Best Ball ML App
 
----
 
 ## 🧠 What the App Does
 
 **Best Ball ML App** is a fantasy football analytics tool that uses machine learning to predict quarterback (QB) performance for Best Ball fantasy formats. The application scrapes QB statistics from online sources, processes the data, and employs machine learning models—specifically, `RandomForestRegressor` and `RandomForestClassifier` from scikit-learn—to generate performance predictions. These predictions are then displayed through an interactive Streamlit dashboard.
-
 
 
 ## 🗂️ Key Files
@@ -16,14 +13,12 @@
 - **`load_stats.py`**: Handles data scraping and preprocessing using `pandas.read_html` to extract QB statistics from HTML tables and prepares the data for model training and prediction.
 
 
-
 ## 🔍 Features
 
 - 🧠 Predicts QB performance using `RandomForestRegressor` and `RandomForestClassifier`.
 - 📊 Scrapes and processes live QB stats from the web.
 - 📈 Displays data and predictions in an interactive Streamlit dashboard.
 - ⚙️ Simple setup and execution in a virtual environment.
-
 
 
 ## ⚙️ How It Works
@@ -51,7 +46,6 @@ pip install streamlit pandas scikit-learn lxml
 ```
 
 
-
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
@@ -60,7 +54,6 @@ pip install streamlit pandas scikit-learn lxml
 git clone https://github.com/joshshua989/best-ball-ml-app.git
 cd best-ball-ml-app
 ```
-
 
 
 ### 2. Running the App
@@ -85,11 +78,9 @@ streamlit run app.py
 - Deploy app via Streamlit Cloud or Heroku
 
 
-
 ## 🤝 Contributing
 
 - Pull requests are welcome! If you have suggestions or feature requests, feel free to open an issue or fork the repo and submit a PR.
-
 
 
 ## 📄 License
