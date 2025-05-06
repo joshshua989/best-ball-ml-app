@@ -13,7 +13,9 @@
 
 # ---------------------- Libraries ----------------------
 import streamlit as st
-import json
+import os
+import psutil
+import signal
 from load_stats import get_qb_projections_with_predictions
 # ---------------------- Libraries ----------------------
 
@@ -30,13 +32,25 @@ st.set_page_config(page_title="🏈 Best Ball MachLearn App v1.0 🤖")
 if 'draft_data' not in st.session_state:
     st.session_state.draft_data = {
         'teams': [
-            {'name': 'Team A', 'roster': []},
-            {'name': 'Team B', 'roster': []}
+            {'name': 'Team 1', 'roster': []},
+            {'name': 'Team 2', 'roster': []},
+            {'name': 'Team 3', 'roster': []},
+            {'name': 'Team 4', 'roster': []},
+            {'name': 'Team 5', 'roster': []},
+            {'name': 'Team 6', 'roster': []},
+            {'name': 'Team 7', 'roster': []},
+            {'name': 'Team 8', 'roster': []},
+            {'name': 'Team 9', 'roster': []},
+            {'name': 'Team 10', 'roster': []},
+            {'name': 'Team 11', 'roster': []},
+            {'name': 'Team 12', 'roster': []},
         ],
         'available_players': [
             {'name': 'Josh Allen', 'position': 'QB'},
             {'name': 'Patrick Mahomes', 'position': 'QB'},
-            {'name': 'Jalen Hurts', 'position': 'QB'}
+            {'name': 'Jalen Hurts', 'position': 'QB'},
+            {'name': 'Jared Goff', 'position': 'QB'},
+            {'name': 'Lamar Jackson', 'position': 'QB'}
         ]
     }
 
@@ -57,9 +71,24 @@ for player in draft_data['available_players']:
 # ---------------------- Data Handling ----------------------
 
 
+# ---------------------- SHUTDOWN ----------------------
+def shutdown():
+    pid = os.getpid()
+    parent = psutil.Process(pid)
+    for child in parent.children(recursive=True):
+        child.send_signal(signal.SIGTERM)
+    parent.send_signal(signal.SIGTERM)
+# ---------------------- SHUTDOWN ----------------------
+
+
 # ---------------------- User Interface ----------------------
 # Displays Streamlit app UI
 st.title("🤖 DRAFT VADER v1.1 🏈")
+
+# Add the shutdown button for local testing
+if st.button("🔒 Shut Down App"):
+    st.warning("Shutting down the app...")
+    shutdown()
 
 # Draft Pick Section:
 st.header("Make a Pick")
