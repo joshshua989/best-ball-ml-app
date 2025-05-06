@@ -27,8 +27,8 @@ st.set_page_config(page_title="🏈 Best Ball MachLearn App v1.0 🤖")
 #   Initializes mock draft data - 
 #       Checks if 'draft_data' exists in the Streamlit session.
 #       If not, creates:
-#           2 teams (Team A, Team B)
-#           3 QBs (Josh Allen, Patrick Mahomes, Jalen Hurts) as available players.
+#           12 teams (Team 1, Team 2, Team 3, etc...)
+#           5 QBs (Josh Allen, Patrick Mahomes, Jalen Hurts, Jared Goff, Lamar Jackson) as available players.
 if 'draft_data' not in st.session_state:
     st.session_state.draft_data = {
         'teams': [
