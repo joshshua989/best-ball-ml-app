@@ -86,7 +86,7 @@ def shutdown():
 st.title("🤖 DRAFT VADER v1.1 🏈")
 
 # Add the shutdown button for local testing
-if st.button("🔒 Shut Down App"):
+if st.button("🔴 Shut Down App"):
     st.warning("Shutting down the app...")
     shutdown()
 
