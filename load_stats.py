@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+from io import StringIO
 # ---------------------- Libraries ----------------------
 
 
@@ -15,7 +16,7 @@ def get_qb_projections_with_predictions(threshold=18.0):
     #   Find the table with the data
     table = soup.find('table', {'id': 'data'})
     # Parses the table of stats into a DataFrame.
-    df = pd.read_html(str(table))[0].dropna()
+    df = pd.read_html(StringIO(str(table)))[0].dropna()
 
     #   Flatten the MultiIndex columns
     df.columns = ['_'.join(col).strip() for col in df.columns.values]
