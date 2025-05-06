@@ -1,5 +1,6 @@
 # 🏈 Best Ball ML App
 
+---
 
 ## 🧠 What the App Does
 
