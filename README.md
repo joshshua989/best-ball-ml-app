@@ -1,5 +1,6 @@
 # 🏈 Best Ball ML App
 
+
 ## 🧠 What the App Does
 
 **Best Ball ML App** is a fantasy football analytics tool that uses machine learning to predict quarterback (QB) performance for Best Ball fantasy formats. The application scrapes QB statistics from online sources, processes the data, and employs machine learning models—specifically, `RandomForestRegressor` and `RandomForestClassifier` from scikit-learn—to generate performance predictions. These predictions are then displayed through an interactive Streamlit dashboard.
