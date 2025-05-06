@@ -29,7 +29,7 @@
 - **Model Training**: Trains `RandomForestRegressor` and `RandomForestClassifier` models on the processed data to predict QB performance metrics.
 - **Prediction Display**: Predicted performance metrics are presented in an interactive dashboard built with Streamlit.
 
-
+---
 
 ## 🧪 Dependencies
 
@@ -71,7 +71,7 @@ streamlit run app.py
 
 - This will launch the application in your default web browser at http://localhost:8501. Network URL: http://10.0.0.54:8501 for devices on the same wifi network.
 
-
+---
 
 ## 🛠️ Roadmap / TODO
 
