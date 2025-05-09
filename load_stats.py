@@ -28,10 +28,12 @@ def get_qb_projections_with_predictions(threshold=18.0):
                 'RUSHING_ATT', 'RUSHING_YDS', 'RUSHING_TDS', 'MISC_FL', 'MISC_FPTS']:
         df[col] = df[col].astype(str).str.replace(',', '').astype(float)
 
-    #   Select relevant features for regression model
+    # Extracts relevant columns from the DataFrame (df) and prepares them for use in a regression model.
+    # 'features' is a list of column names that represent the features (independent variables) used in the regression model.
     features = ['PASSING_YDS', 'PASSING_TDS', 'PASSING_INTS', 'RUSHING_ATT', 'RUSHING_YDS', 'RUSHING_TDS']
-    X = df[features]
-    y_reg = df['MISC_FPTS']
+    # Uses the list of features to select the corresponding columns from the DataFrame.
+    X = df[features] # X is the feature matrix, which will be used as input for the regression model.
+    y_reg = df['MISC_FPTS'] # Selects the MISC_FPTS column from the DataFrame as the target variable (dependent variable) for the regression model.
 
     # Fit the regression model to predict Fantasy Points (FPTS)
     reg_model = RandomForestRegressor()
